@@ -1,0 +1,6 @@
+*.gradle linguist-language=Java
+*.yml linguist-language=Java
+*.yaml linguist-language=Java
+*.sql linguistist-language=Java
+Dockerfile linguist-language=Java
+docker-compose.yml linguist-language=Java

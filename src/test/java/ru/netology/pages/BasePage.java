@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Selenide.$;
+
 public class BasePage {
 
     protected void setValue(SelenideElement element, String value) {
@@ -13,17 +15,17 @@ public class BasePage {
         }
     }
 
-    protected void checkNotification(SelenideElement notification, boolean shouldBeVisible) {
-        if (shouldBeVisible) {
-            notification.shouldBe(Condition.visible, Duration.ofSeconds(15));
-        } else {
-            notification.shouldNotBe(Condition.visible);
-        }
+    protected void checkSuccessNotification() {
+        $(".notification_status_ok")
+                .shouldBe(Condition.visible, Duration.ofSeconds(20));
     }
 
-    protected void checkFieldError(SelenideElement field, String expectedError) {
-        if (expectedError != null && !expectedError.isEmpty()) {
-            field.shouldHave(Condition.exactText(expectedError));
-        }
+    protected void checkErrorNotification() {
+        $(".notification_status_error")
+                .shouldBe(Condition.visible, Duration.ofSeconds(20));
+    }
+
+    protected void clickContinueButton(SelenideElement button) {
+        button.click();
     }
 }

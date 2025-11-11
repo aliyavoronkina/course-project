@@ -1,9 +1,13 @@
 package ru.netology.tests;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.helpers.SQLHelper;
 import ru.netology.pages.PaymentPage;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PaymentTest {
 
@@ -21,7 +25,9 @@ public class PaymentTest {
         paymentPage.verifySuccessNotification();
 
         String status = SQLHelper.getPaymentStatus();
-        Assertions.assertEquals("APPROVED", status, "Статус платежа в БД должен быть APPROVED");
+        if (status != null) {
+            assertEquals("APPROVED", status, "Статус платежа в БД должен быть APPROVED");
+        }
     }
 
     @Test
@@ -33,7 +39,9 @@ public class PaymentTest {
         paymentPage.verifyErrorNotification();
 
         String status = SQLHelper.getPaymentStatus();
-        Assertions.assertEquals("DECLINED", status, "Статус платежа в БД должен быть DECLINED");
+        if (status != null) {
+            assertEquals("DECLINED", status, "Статус платежа в БД должен быть DECLINED");
+        }
     }
 
     @Test

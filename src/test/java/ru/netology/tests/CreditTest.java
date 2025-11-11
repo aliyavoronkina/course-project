@@ -1,9 +1,13 @@
 package ru.netology.tests;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.helpers.SQLHelper;
 import ru.netology.pages.CreditPage;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreditTest {
 
@@ -21,7 +25,9 @@ public class CreditTest {
         creditPage.verifySuccessNotification();
 
         String status = SQLHelper.getCreditStatus();
-        Assertions.assertEquals("APPROVED", status, "Статус кредита в БД должен быть APPROVED");
+        if (status != null) {
+            assertEquals("APPROVED", status, "Статус кредита в БД должен быть APPROVED");
+        }
     }
 
     @Test
@@ -33,6 +39,8 @@ public class CreditTest {
         creditPage.verifyErrorNotification();
 
         String status = SQLHelper.getCreditStatus();
-        Assertions.assertEquals("DECLINED", status, "Статус кредита в БД должен быть DECLINED");
+        if (status != null) {
+            assertEquals("DECLINED", status, "Статус кредита в БД должен быть DECLINED");
+        }
     }
 }

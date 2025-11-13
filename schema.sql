@@ -1,5 +1,4 @@
-
-"CREATE DATABASE IF NOT EXISTS app;
+CREATE DATABASE IF NOT EXISTS app;
 
 USE app;
 
@@ -23,5 +22,4 @@ CREATE TABLE IF NOT EXISTS order_entity (
     created DATETIME,
     credit_id VARCHAR(255),
     payment_id VARCHAR(255)
-);" | Out-File -FilePath "schema.sql" -Encoding ascii
-
+);

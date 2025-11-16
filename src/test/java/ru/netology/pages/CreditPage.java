@@ -1,109 +1,90 @@
 package ru.netology.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.data.DataHelper.CardInfo;
+import ru.netology.data.CardInfo;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CreditPage {
-    private SelenideElement cardNumberField = $("input[placeholder='0000 0000 0000 0000']");
-    private SelenideElement cardMonthField = $("input[placeholder='08']");
-    private SelenideElement cardYearField = $("input[placeholder='22']");
-    private SelenideElement cardHolderField = $("fieldset > div:nth-child(3) input");
-    private SelenideElement cardCvcField = $("input[placeholder='999']");
-    private SelenideElement continueButton = $$("button").findBy(text("Продолжить"));
 
-    private SelenideElement successNotification = $(".notification_status_ok");
-    private SelenideElement errorNotification = $(".notification_status_error");
-    private SelenideElement formHeading = $$(".heading").findBy(text("Кредит по данным карты"));
-
-    public CreditPage() {
-        formHeading.shouldBe(visible, Duration.ofSeconds(10));
-    }
-
-    // Публичные методы для заполнения полей
-    public CreditPage enterCardNumber(String cardNumber) {
-        cardNumberField.setValue(cardNumber);
-        return this;
-    }
-
-    public CreditPage enterMonth(String month) {
-        cardMonthField.setValue(month);
-        return this;
-    }
-
-    public CreditPage enterYear(String year) {
-        cardYearField.setValue(year);
-        return this;
-    }
-
-    public CreditPage enterHolder(String holder) {
-        cardHolderField.setValue(holder);
-        return this;
-    }
-
-    public CreditPage enterCvc(String cvc) {
-        cardCvcField.setValue(cvc);
-        return this;
-    }
-
-    // Основной метод заполнения формы
-    public CreditPage fillForm(CardInfo card) {
+    // Доменный метод для заполнения формы
+    public void fillCreditForm(CardInfo card) {
         enterCardNumber(card.getNumber());
         enterMonth(card.getMonth());
         enterYear(card.getYear());
         enterHolder(card.getHolder());
         enterCvc(card.getCvc());
-        return this;
     }
 
-    public void submitForm() {
-        continueButton.click();
+    // Доменный метод для отправки формы
+    public void submitCreditRequest() {
+        getContinueButton().click();
     }
 
-    // Публичные методы проверки уведомлений
-    public void checkSuccessNotification() {
-        successNotification.shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(text("Успешно"));
+    // Доменные методы для проверок
+    public void verifySuccessNotification() {
+        getSuccessNotification().shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    public void checkErrorNotification() {
-        errorNotification.shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(text("Ошибка"));
+    public void verifyErrorNotification() {
+        getErrorNotification().shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    // Публичные методы проверки ошибок полей
-    public void checkCardNumberError() {
-        cardNumberField.closest(".input").$(".input__sub")
-                .shouldBe(visible, Duration.ofSeconds(5))
-                .shouldHave(text("Неверный формат"));
+    // Приватные методы для взаимодействия с элементами
+    private void enterCardNumber(String value) {
+        getCardNumberField().setValue(value);
     }
 
-    public void checkMonthError() {
-        cardMonthField.closest(".input").$(".input__sub")
-                .shouldBe(visible, Duration.ofSeconds(5))
-                .shouldHave(text("Неверно указан срок действия карты"));
+    private void enterMonth(String value) {
+        getMonthField().setValue(value);
     }
 
-    public void checkYearError() {
-        cardYearField.closest(".input").$(".input__sub")
-                .shouldBe(visible, Duration.ofSeconds(5))
-                .shouldHave(text("Истёк срок действия карты"));
+    private void enterYear(String value) {
+        getYearField().setValue(value);
     }
 
-    public void checkHolderError() {
-        cardHolderField.closest(".input").$(".input__sub")
-                .shouldBe(visible, Duration.ofSeconds(5))
-                .shouldHave(text("Поле обязательно для заполнения"));
+    private void enterHolder(String value) {
+        getHolderField().setValue(value);
     }
 
-    public void checkCvcError() {
-        cardCvcField.closest(".input").$(".input__sub")
-                .shouldBe(visible, Duration.ofSeconds(5))
-                .shouldHave(text("Неверный формат"));
+    private void enterCvc(String value) {
+        getCvcField().setValue(value);
+    }
+
+    private SelenideElement getCardNumberField() {
+        return $("input[placeholder='0000 0000 0000 0000']");
+    }
+
+    private SelenideElement getMonthField() {
+        return $("input[placeholder='08']");
+    }
+
+    private SelenideElement getYearField() {
+        return $("input[placeholder='22']");
+    }
+
+    private SelenideElement getHolderField() {
+        return $("fieldset > div:nth-child(3) input");
+    }
+
+    private SelenideElement getCvcField() {
+        return $("input[placeholder='999']");
+    }
+
+    private SelenideElement getContinueButton() {
+        return $$("button").findBy(text("Продолжить"));
+    }
+
+    private SelenideElement getSuccessNotification() {
+        return $(".notification_status_ok");
+    }
+
+    private SelenideElement getErrorNotification() {
+        return $(".notification_status_error");
     }
 }

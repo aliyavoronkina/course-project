@@ -3,48 +3,48 @@ plugins {
     id 'io.qameta.allure' version '2.11.2'
 }
 
-group 'ru.netology'
-version '1.0-SNAPSHOT'
+group = 'ru.netology'
+version = '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
-allure {
-    version = '2.24.0'
-    useJUnit5 {
-        version = '2.24.0'
-    }
-}
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
-    testImplementation 'com.codeborne:selenide:6.19.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'com.codeborne:selenide:6.17.2'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.qameta.allure:allure-selenide:2.24.0'
+    testImplementation 'org.projectlombok:lombok:1.18.28'
+    testImplementation 'mysql:mysql-connector-java:8.0.33'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.8'
 
-    // DBUtils для SQLHelper
-    implementation 'commons-dbutils:commons-dbutils:1.7'
-
-    // MySQL connector
-    implementation 'mysql:mysql-connector-java:8.0.33'
-
-    // Lombok - ПОЛНАЯ КОНФИГУРАЦИЯ
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-    testCompileOnly 'org.projectlombok:lombok:1.18.24'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
 test {
     useJUnitPlatform()
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'selenide.fileEncoding', 'UTF-8'
+    systemProperty 'selenide.headless', 'true' // для запуска без GUI
+    jvmArgs '-Dfile.encoding=UTF-8'
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+        exceptionFormat = "full"
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+allure {
+    version = '2.13.8'
+    useJUnit5 {
+        version = '2.13.8'
+    }
 }

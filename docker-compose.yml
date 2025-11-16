@@ -4,29 +4,27 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: app
       MYSQL_USER: app
       MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3306"
+        - "3306:3306"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
       retries: 10
-    volumes:
-      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
   app:
     image: eclipse-temurin:11-jre
     command: java -jar /app/aqa-shop.jar
     volumes:
       - ./artifacts/aqa-shop.jar:/app/aqa-shop.jar
-      - ./application.properties:/app/application.properties
+      - ./artifacts/application.properties:/app/application.properties  # ДОБАВЬ ЭТУ СТРОКУ!
+    environment:
+      SPRING_CONFIG_LOCATION: /app/application.properties  # И ЭТУ СТРОКУ!
     ports:
       - "8080:8080"
     depends_on:
       mysql:
         condition: service_healthy
-    environment:
-      SPRING_CONFIG_LOCATION: /app/application.properties

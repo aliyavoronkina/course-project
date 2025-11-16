@@ -9,7 +9,6 @@ import ru.netology.pages.PaymentPage;
 import static com.codeborne.selenide.Selenide.open;
 
 public class InvalidTest {
-    private PaymentPage paymentPage;
 
     @BeforeAll
     static void setUpAll() {
@@ -21,61 +20,273 @@ public class InvalidTest {
         SelenideLogger.removeListener("allure");
     }
 
-    @BeforeEach
-    public void setUp() {
-        paymentPage = open("http://localhost:8080", PaymentPage.class);
+    // Card Number Tests
+    @Test
+    @DisplayName("Should show error for invalid card number")
+    void shouldShowErrorForInvalidCardNumber() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var invalidCard = DataHelper.getCardWithInvalidNumber();
+
+        debitPage.fillPaymentForm(invalidCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 
     @Test
-    @DisplayName("Should show error with short CVC")
-    void shouldShowErrorWithShortCvc() {
-        var debitPage = paymentPage.selectDebitPayment();
-        debitPage.fillForm(DataHelper.getCardWithShortCvc())
-                .submitForm();
+    @DisplayName("Should show error for empty card number")
+    void shouldShowErrorForEmptyCardNumber() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyCardNumber = DataHelper.getCardWithEmptyCardNumber();
 
-        debitPage.checkCvcError();
+        debitPage.fillPaymentForm(emptyCardNumber);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 
     @Test
-    @DisplayName("Should show error with numeric holder")
-    void shouldShowErrorWithNumericHolder() {
-        var debitPage = paymentPage.selectDebitPayment();
-        debitPage.fillForm(DataHelper.getCardWithNumericHolder())
-                .submitForm();
+    @DisplayName("Should show error for short card number")
+    void shouldShowErrorForShortCardNumber() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var shortCardNumber = DataHelper.getCardWithShortCardNumber();
 
-        debitPage.checkHolderError();
+        debitPage.fillPaymentForm(shortCardNumber);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 
     @Test
-    @DisplayName("Should show error with zero month")
-    void shouldShowErrorWithZeroMonth() {
-        var debitPage = paymentPage.selectDebitPayment();
-        debitPage.fillForm(DataHelper.getCardWithZeroMonth())
-                .submitForm();
+    @DisplayName("Should show error for card number with letters")
+    void shouldShowErrorForCardNumberWithLetters() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var cardWithLetters = DataHelper.getCardWithCardNumberWithLetters();
 
-        debitPage.checkMonthError();
+        debitPage.fillPaymentForm(cardWithLetters);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    // Month Tests
+    @Test
+    @DisplayName("Should show error for invalid month")
+    void shouldShowErrorForInvalidMonth() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var invalidCard = DataHelper.getCardWithInvalidMonth();
+
+        debitPage.fillPaymentForm(invalidCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 
     @Test
-    @DisplayName("Should show error with future year")
-    void shouldShowErrorWithFutureYear() {
-        var debitPage = paymentPage.selectDebitPayment();
-        debitPage.fillForm(DataHelper.getCardWithFutureYear())
-                .submitForm();
+    @DisplayName("Should show error for zero month")
+    void shouldShowErrorForZeroMonth() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var zeroMonthCard = DataHelper.getCardWithZeroMonth();
 
-        debitPage.checkYearError();
+        debitPage.fillPaymentForm(zeroMonthCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 
     @Test
-    @DisplayName("Should show error with empty holder")
-    void shouldShowErrorWithEmptyHolder() {
-        var debitPage = paymentPage.selectDebitPayment();
-        debitPage.enterCardNumber(DataHelper.getApprovedCardNumber())
-                .enterMonth(DataHelper.getValidMonth())
-                .enterYear(DataHelper.getValidYear())
-                .enterCvc(DataHelper.getValidCvc())
-                .submitForm();
+    @DisplayName("Should show error for empty month")
+    void shouldShowErrorForEmptyMonth() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyMonthCard = DataHelper.getCardWithEmptyMonth();
 
-        debitPage.checkHolderError();
+        debitPage.fillPaymentForm(emptyMonthCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for single digit month")
+    void shouldShowErrorForSingleDigitMonth() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var singleDigitMonthCard = DataHelper.getCardWithSingleDigitMonth();
+
+        debitPage.fillPaymentForm(singleDigitMonthCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    // Year Tests
+    @Test
+    @DisplayName("Should show error for expired year")
+    void shouldShowErrorForExpiredYear() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var expiredCard = DataHelper.getCardWithPastYear();
+
+        debitPage.fillPaymentForm(expiredCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for future year")
+    void shouldShowErrorForFutureYear() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var futureYearCard = DataHelper.getCardWithFutureYear();
+
+        debitPage.fillPaymentForm(futureYearCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for empty year")
+    void shouldShowErrorForEmptyYear() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyYearCard = DataHelper.getCardWithEmptyYear();
+
+        debitPage.fillPaymentForm(emptyYearCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for single digit year")
+    void shouldShowErrorForSingleDigitYear() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var singleDigitYearCard = DataHelper.getCardWithSingleDigitYear();
+
+        debitPage.fillPaymentForm(singleDigitYearCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    // Holder Tests
+    @Test
+    @DisplayName("Should show error for cyrillic holder")
+    void shouldShowErrorForCyrillicHolder() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var cyrillicCard = DataHelper.getCardWithCyrillicHolder();
+
+        debitPage.fillPaymentForm(cyrillicCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for numeric holder")
+    void shouldShowErrorForNumericHolder() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var numericHolderCard = DataHelper.getCardWithNumericHolder();
+
+        debitPage.fillPaymentForm(numericHolderCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for empty holder")
+    void shouldShowErrorForEmptyHolder() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyHolderCard = DataHelper.getCardWithEmptyHolder();
+
+        debitPage.fillPaymentForm(emptyHolderCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for holder with special characters")
+    void shouldShowErrorForHolderWithSpecialChars() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var specialCharsHolderCard = DataHelper.getCardWithHolderWithSpecialChars();
+
+        debitPage.fillPaymentForm(specialCharsHolderCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for long holder name")
+    void shouldShowErrorForLongHolderName() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var longHolderCard = DataHelper.getCardWithLongHolderName();
+
+        debitPage.fillPaymentForm(longHolderCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    // CVC Tests
+    @Test
+    @DisplayName("Should show error for short CVC")
+    void shouldShowErrorForShortCvc() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var shortCvcCard = DataHelper.getCardWithShortCvc();
+
+        debitPage.fillPaymentForm(shortCvcCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for empty CVC")
+    void shouldShowErrorForEmptyCvc() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyCvcCard = DataHelper.getCardWithEmptyCvc();
+
+        debitPage.fillPaymentForm(emptyCvcCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for single digit CVC")
+    void shouldShowErrorForSingleDigitCvc() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var singleDigitCvcCard = DataHelper.getCardWithSingleDigitCvc();
+
+        debitPage.fillPaymentForm(singleDigitCvcCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    @Test
+    @DisplayName("Should show error for CVC with letters")
+    void shouldShowErrorForCvcWithLetters() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var cvcWithLettersCard = DataHelper.getCardWithCvcWithLetters();
+
+        debitPage.fillPaymentForm(cvcWithLettersCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
+    }
+
+    // Form Tests
+    @Test
+    @DisplayName("Should show error for empty form")
+    void shouldShowErrorForEmptyForm() {
+        var paymentPage = open("http://localhost:8080", PaymentPage.class);
+        var debitPage = paymentPage.goToDebitPayment();
+        var emptyCard = DataHelper.getEmptyCard();
+
+        debitPage.fillPaymentForm(emptyCard);
+        debitPage.submitPayment();
+        debitPage.verifyErrorNotification();
     }
 }

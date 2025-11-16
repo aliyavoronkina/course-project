@@ -1,90 +1,95 @@
 package ru.netology.helpers;
 
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class SQLHelper {
     private static final String URL = "jdbc:mysql://localhost:3306/app";
     private static final String USER = "app";
     private static final String PASSWORD = "pass";
 
-    static {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("MySQL Driver not found", e);
-        }
-    }
-
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
-    public static void testConnection() {
-        try (Connection conn = getConnection()) {
-            System.out.println("✅ Database connection successful");
+    public static String getPaymentStatus() {
+        String sql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getString("status");
+            }
+            return null;
         } catch (SQLException e) {
-            System.out.println("❌ Database connection failed: " + e.getMessage());
-            throw new RuntimeException("Database connection failed", e);
+            System.err.println("Error getting payment status: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static String getCreditStatus() {
+        String sql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getString("status");
+            }
+            return null;
+        } catch (SQLException e) {
+            System.err.println("Error getting credit status: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static String getPaymentId() {
+        String sql = "SELECT payment_id FROM order_entity ORDER BY created DESC LIMIT 1";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getString("payment_id");
+            }
+            return null;
+        } catch (SQLException e) {
+            System.err.println("Error getting payment ID: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static String getCreditId() {
+        String sql = "SELECT credit_id FROM order_entity ORDER BY created DESC LIMIT 1";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getString("credit_id");
+            }
+            return null;
+        } catch (SQLException e) {
+            System.err.println("Error getting credit ID: " + e.getMessage());
+            return null;
         }
     }
 
     public static void cleanDatabase() {
-        var runner = new QueryRunner();
-        var queries = new String[]{
+        String[] queries = {
                 "DELETE FROM order_entity",
                 "DELETE FROM payment_entity",
                 "DELETE FROM credit_request_entity"
         };
 
-        try (var conn = getConnection()) {
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+
             for (String query : queries) {
-                int affected = runner.update(conn, query);
-                System.out.println("Cleaned " + affected + " rows from: " + query);
+                stmt.executeUpdate(query);
             }
         } catch (SQLException e) {
-            System.out.println("SQL Exception during cleanup: " + e.getMessage());
+            System.err.println("Error cleaning database: " + e.getMessage());
         }
-    }
-
-    public static String getPaymentStatus() {
-        return getStatus("payment_entity", "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1");
-    }
-
-    public static String getCreditStatus() {
-        return getStatus("credit_request_entity", "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1");
-    }
-
-    private static String getStatus(String entityName, String sql) {
-        var runner = new QueryRunner();
-
-        try (var conn = getConnection()) {
-            String status = runner.query(conn, sql, new ScalarHandler<String>());
-            System.out.println("📊 " + entityName + " status: " + status);
-            return status;
-        } catch (SQLException e) {
-            System.out.println("ℹ️ No records found in " + entityName + ": " + e.getMessage());
-            return null;
-        }
-    }
-
-    public static void waitForRecord(int maxWaitMs) {
-        long start = System.currentTimeMillis();
-        while (System.currentTimeMillis() - start < maxWaitMs) {
-            if (getPaymentStatus() != null || getCreditStatus() != null) {
-                return;
-            }
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                return;
-            }
-        }
-        System.out.println("⏰ Timeout waiting for database record");
     }
 }

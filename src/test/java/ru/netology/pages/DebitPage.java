@@ -12,79 +12,82 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class DebitPage {
 
+    // Объявляем элементы как поля класса
+    private SelenideElement cardNumberField = $("input[placeholder='0000 0000 0000 0000']");
+    private SelenideElement monthField = $("input[placeholder='08']");
+    private SelenideElement yearField = $("input[placeholder='22']");
+    private SelenideElement holderField = $("fieldset > div:nth-child(3) input");
+    private SelenideElement cvcField = $("input[placeholder='999']");
+    private SelenideElement continueButton = $$("button").findBy(text("Продолжить"));
+    private SelenideElement successNotification = $(".notification_status_ok");
+    private SelenideElement errorNotification = $(".notification_status_error");
+
     // Доменный метод для заполнения формы
     public void fillPaymentForm(CardInfo card) {
-        enterCardNumber(card.getNumber());
-        enterMonth(card.getMonth());
-        enterYear(card.getYear());
-        enterHolder(card.getHolder());
-        enterCvc(card.getCvc());
+        cardNumberField.setValue(card.getNumber());
+        monthField.setValue(card.getMonth());
+        yearField.setValue(card.getYear());
+        holderField.setValue(card.getHolder());
+        cvcField.setValue(card.getCvc());
     }
 
     // Доменный метод для отправки формы
     public void submitPayment() {
-        getContinueButton().click();
+        continueButton.click();
     }
 
     // Доменные методы для проверок
     public void verifySuccessNotification() {
-        getSuccessNotification().shouldBe(visible, Duration.ofSeconds(15));
+        successNotification.shouldBe(visible, Duration.ofSeconds(15));
+        successNotification.shouldHave(text("Успешно"));
     }
 
     public void verifyErrorNotification() {
-        getErrorNotification().shouldBe(visible, Duration.ofSeconds(15));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(15));
+        errorNotification.shouldHave(text("Ошибка! Банк отказал в проведении операции"));
     }
 
-    // Приватные методы для взаимодействия с элементами
-    private void enterCardNumber(String value) {
-        getCardNumberField().setValue(value);
+    // МЕТОДЫ С ПРАВИЛЬНЫМИ ТЕКСТАМИ
+    public void verifyCardNumberValidationError() {
+        $$("span, div").filterBy(visible)
+                .findBy(text("Неверный формат"))
+                .shouldBe(visible, Duration.ofSeconds(5));
     }
 
-    private void enterMonth(String value) {
-        getMonthField().setValue(value);
+    public void verifyMonthValidationError() {
+        $$("span, div").filterBy(visible)
+                .findBy(text("Неверный формат"))
+                .shouldBe(visible, Duration.ofSeconds(5));
     }
 
-    private void enterYear(String value) {
-        getYearField().setValue(value);
+    public void verifyYearValidationError() {
+        $$("span, div").filterBy(visible)
+                .findBy(text("Неверный формат"))
+                .shouldBe(visible, Duration.ofSeconds(5));
     }
 
-    private void enterHolder(String value) {
-        getHolderField().setValue(value);
+    public void verifyHolderValidationError() {
+        $$("span, div").filterBy(visible)
+                .findBy(text("Поле обязательно для заполнения"))
+                .shouldBe(visible, Duration.ofSeconds(5));
     }
 
-    private void enterCvc(String value) {
-        getCvcField().setValue(value);
+    public void verifyCvcValidationError() {
+        $$("span, div").filterBy(visible)
+                .findBy(text("Неверный формат"))
+                .shouldBe(visible, Duration.ofSeconds(5));
     }
 
-    private SelenideElement getCardNumberField() {
-        return $("input[placeholder='0000 0000 0000 0000']");
-    }
+    // УНИВЕРСАЛЬНЫЙ МЕТОД - проверяет что есть ЛЮБОЕ сообщение валидации
+    public void verifyAnyValidationError() {
+        // Ищем элементы с любым из текстов ошибок
+        boolean hasError = $$("span, div").filterBy(visible)
+                .findBy(text("Неверный формат")).exists() ||
+                $$("span, div").filterBy(visible)
+                        .findBy(text("Поле обязательно для заполнения")).exists();
 
-    private SelenideElement getMonthField() {
-        return $("input[placeholder='08']");
-    }
-
-    private SelenideElement getYearField() {
-        return $("input[placeholder='22']");
-    }
-
-    private SelenideElement getHolderField() {
-        return $("fieldset > div:nth-child(3) input");
-    }
-
-    private SelenideElement getCvcField() {
-        return $("input[placeholder='999']");
-    }
-
-    private SelenideElement getContinueButton() {
-        return $$("button").findBy(text("Продолжить"));
-    }
-
-    private SelenideElement getSuccessNotification() {
-        return $(".notification_status_ok");
-    }
-
-    private SelenideElement getErrorNotification() {
-        return $(".notification_status_error");
+        if (!hasError) {
+            throw new AssertionError("Не найдено сообщение валидации");
+        }
     }
 }

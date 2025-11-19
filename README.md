@@ -38,7 +38,7 @@ docker-compose logs app
 ### 3 Запуск автотестов с отчетом
 ./gradlew clean test allureReport allureServe
 
-(или посмотреть вручную) ./gradlew allureServe
+(или посмотреть вручную) ./gradlew allureServe  - откроется allure отчет
 
 Gradle отчет:
 Перейдите в папку build/reports/tests/test/ и откройте index.html

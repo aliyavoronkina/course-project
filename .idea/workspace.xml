@@ -5,154 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3e725-d2fd-4480-b765-1161fc486891" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/artifacts/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/course-project.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plan.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/01b379d2-48c6-4256-8862-0cf4042aec84-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/029496be-da55-4071-86ea-d75439a4e0f4-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/061fd5ec-5b3d-4306-8ab4-2fa407388540-attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/08f0f64d-a1b7-46ef-8244-367c8ffd5839-attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/098b6c69-0f2e-4a2c-b935-422c75d2deef-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/0e6f1f95-52c7-4ce5-afd9-edab6e7cd277-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/18321b0d-7994-4b6e-9328-83ffb8c38d5c-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/1c078e46-4ad5-48dc-9777-69b161bc9e4a-attachment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/1fa54966-9449-43ca-ae97-63d36db1ee34-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/21b1fb37-be3e-4dfd-a543-92e0c65fb18e-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/24b2a87b-e903-44ff-872f-15d5dbc44461-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/2dafa589-8041-49c9-8c85-97b912d6874d-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/31643997-e769-4451-a4f4-fbc9cf0aea51-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/33485a49-01f5-4d26-b5eb-7889d589708e-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/3859ba29-30d0-42b4-ab85-5dc028e7ffd4-attachment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/40d37d4d-fb8d-4ca2-98d4-37ff6bc83bf2-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/428541fa-d207-4c8b-af0c-d3b905ca6836-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/4e580113-c0d8-477a-b320-59d2a29f522c-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/5201a0c8-ee48-4c81-8524-280719f89e38-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/59a5aaff-595f-44b3-97bd-1d7fb5c499bb-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/644be99e-d0f4-42eb-912a-9fbc90ff9567-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/6c6aa081-8d74-4328-b47c-22125941bd82-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/6d11e985-1968-4132-9657-b6c8ef6d003b-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/6f2e7914-dc2e-4dc9-af65-4a1cf4f1fafd-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/73f1e67e-f75f-44c6-82c8-d5432eecd97f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/7423bd42-9399-4905-84a7-9114ee41f4e7-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/756ab273-b9cc-451f-8c52-5930c9f27258-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/75d98237-9fc8-4783-9ffa-422f16798370-attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/795c5562-9b9e-45fb-9bb3-1d02c7eca616-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/7a6c8365-6f8c-4b3b-aea1-22b582717118-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/7dcf6268-8ee7-4af2-a3d6-c1f8853e8dd8-attachment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/82eeedb4-3317-4160-8bfd-547493e14582-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/8332cb21-afbb-4ff8-88d6-e62788ec998b-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/8483d93d-5f95-44bd-8f8c-ffb5f02fe7a8-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/8bc60b2a-2095-45bd-b30a-f631d2563732-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/912d0b3c-d770-4a6d-af7f-9c5523b84105-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/928d6ba1-de9d-49f9-84bc-280b6a012a68-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/936ae32e-e688-4776-addc-96c416d4a036-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/947a648b-11a7-4760-afea-7b30b5dc9925-attachment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/96176b32-695d-4234-8796-935953ee92a7-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/9791cc92-edd7-4db9-82bc-a8c1ce0d226d-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/99286837-0b79-42e8-b856-c5d2fa92fa24-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/9ca11fb6-0902-4a72-8a5c-2624578e6e05-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/a374375d-f8d5-4858-98af-f4eb8e171915-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/b3549b92-0c7c-4c5f-aec4-976412e538ea-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/b49c44e6-dc8f-4cb0-8270-eaaa13cd73a3-attachment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/b5e7418c-5484-49b6-8a08-813256789c4b-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/bae517a1-b65c-402d-a3ab-8b5b54fa228f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/bed17e40-de2a-4d1c-8ef1-8efc5a6afb2a-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/bf9493b0-c705-4583-b3c5-333cedb8d886-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/bfd080e3-27d8-48e3-ae3b-e8a0be967645-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/bff9dc21-de85-4ea8-82cf-ac3cebeb374c-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/c3e77fd8-8dd9-4b23-a550-f5a2af28fbc1-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/c6773c8f-dd05-4fb9-b7f3-df08e51d30a2-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/cb4d0d18-ed2f-4ed4-b5b7-d4149e6e46ad-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/cd82be2f-6fe6-40c4-96db-4f3fd1a87e4e-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/dccd43b6-0ca4-41a4-871b-aa2b1c37ed4c-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/dcd95d86-65c6-461c-b6ee-6632773425f5-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/e41c4773-8aa2-49da-838e-df9922e570c1-attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/e7f11743-8308-44ef-9d24-c9b1391ba7bc-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/e913af47-cc72-4e2d-92d7-c047a5c04138-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/eaa5998d-4bf1-47db-b65b-3cca097d14bc-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/eb39ec22-9918-4886-96d8-a7e5483d4e0f-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/f1334802-d9d0-4496-bcb6-e79658398292-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/f34ec33d-bd37-450c-bb1b-6a8e72c9a8c9-attachment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/f3e1e249-8bca-4450-94a9-b1a5f2fa5ac0-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/f90bd32f-647e-494b-86b4-7d679ad81c06-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/fc6620ea-ae69-4482-bdb5-10957e26ee5f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/fd01214c-f25e-47ec-a011-2782add9c2cb-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/feefc25a-4085-4117-a306-19ece9610894-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DataHelper$CardInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DataHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DataHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/helpers/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/helpers/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/CreditPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/CreditPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/DebitPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/DebitPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/PaymentPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/PaymentPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/CreditTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/CreditTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/DebitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/DebitTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/InvalidTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/InvalidTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069418693.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069418693.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069444525.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069444525.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069461366.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069461366.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069468309.3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069468309.3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069474280.4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/1763069474280.4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.CreditTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.DebitTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.InvalidTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.InvalidTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.netology.tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.netology.tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.CreditTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.DebitTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.InvalidTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.InvalidTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/CreditPage.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/CreditTest.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/DebitPage.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/DebitTest.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/InvalidTest.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/PaymentPage.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/DataHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/helpers/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/helpers/SQLHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/allure-results/executor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/CardInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DataHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/helpers/SQLHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/CreditPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/DebitPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/PaymentPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/CreditTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/DebitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/InvalidTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.InvalidTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.netology.tests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.InvalidTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/PaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/PaymentPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/tests/CreditTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/tests/CreditTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/tests/DebitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/tests/DebitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/tests/InvalidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/tests/InvalidTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,10 +117,8 @@
       <command value="./gradlew clean test" />
       <command value="./gradlew --stop" />
       <command value="./gradlew clean" />
-      <command value="./gradlew clean build " />
       <command value="./gradlew test" />
       <command value="./gradlew test -Dselenide.headless=false" />
-      <command value="./gradlew test " />
       <command value="./gradlew build" />
       <command value="./gradlew clean build --refresh-dependencies" />
       <command value="./gradlew test --debug" />
@@ -253,9 +128,12 @@
       <command value="./gradlew test --info" />
       <command value="./gradlew clean test --no-configure-on-demand" />
       <command value="./gradlew clean test " />
+      <command value="./gradlew clean build " />
+      <command value="./gradlew test " />
+      <command value="./gradlew build " />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.course-project [clean test]">
+  <component name="RunManager" selected="Gradle.course-project [build]">
     <configuration name="course-project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

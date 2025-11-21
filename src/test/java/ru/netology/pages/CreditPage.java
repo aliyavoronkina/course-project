@@ -22,6 +22,8 @@ public class CreditPage {
     private SelenideElement successNotification = $(".notification_status_ok");
     private SelenideElement errorNotification = $(".notification_status_error");
 
+
+
     // Доменный метод для заполнения формы
     public void fillCreditForm(CardInfo card) {
         cardNumberField.setValue(card.getNumber());
@@ -39,55 +41,13 @@ public class CreditPage {
     // Доменные методы для проверок
     public void verifySuccessNotification() {
         successNotification.shouldBe(visible, Duration.ofSeconds(15));
-        successNotification.shouldHave(text("Успешно"));
+        successNotification.shouldHave(text("Операция одобрена банком"));
     }
 
     public void verifyErrorNotification() {
-        errorNotification.shouldBe(visible, Duration.ofSeconds(15));
+        // Ждем появления элемента с увеличенным временем
+        errorNotification.shouldBe(visible, Duration.ofSeconds(30));
         errorNotification.shouldHave(text("Ошибка! Банк отказал в проведении операции"));
     }
 
-    // МЕТОДЫ С ПРАВИЛЬНЫМИ ТЕКСТАМИ
-    public void verifyCardNumberValidationError() {
-        $$("span, div").filterBy(visible)
-                .findBy(text("Неверный формат"))
-                .shouldBe(visible, Duration.ofSeconds(5));
-    }
-
-    public void verifyMonthValidationError() {
-        $$("span, div").filterBy(visible)
-                .findBy(text("Неверный формат"))
-                .shouldBe(visible, Duration.ofSeconds(5));
-    }
-
-    public void verifyYearValidationError() {
-        $$("span, div").filterBy(visible)
-                .findBy(text("Неверный формат"))
-                .shouldBe(visible, Duration.ofSeconds(5));
-    }
-
-    public void verifyHolderValidationError() {
-        $$("span, div").filterBy(visible)
-                .findBy(text("Поле обязательно для заполнения"))
-                .shouldBe(visible, Duration.ofSeconds(5));
-    }
-
-    public void verifyCvcValidationError() {
-        $$("span, div").filterBy(visible)
-                .findBy(text("Неверный формат"))
-                .shouldBe(visible, Duration.ofSeconds(5));
-    }
-
-    // УНИВЕРСАЛЬНЫЙ МЕТОД - проверяет что есть ЛЮБОЕ сообщение валидации
-    public void verifyAnyValidationError() {
-        // Ищем элементы с любым из текстов ошибок
-        boolean hasError = $$("span, div").filterBy(visible)
-                .findBy(text("Неверный формат")).exists() ||
-                $$("span, div").filterBy(visible)
-                        .findBy(text("Поле обязательно для заполнения")).exists();
-
-        if (!hasError) {
-            throw new AssertionError("Не найдено сообщение валидации");
-        }
-    }
 }

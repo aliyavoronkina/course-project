@@ -1,6 +1,7 @@
 package ru.netology.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$;
@@ -17,7 +18,6 @@ public class PaymentPage {
         return new CreditPage();
     }
 
-    // Доменные методы для взаимодействия с элементами
     private SelenideElement getBuyButton() {
         return $$("button").findBy(text("Купить"));
     }

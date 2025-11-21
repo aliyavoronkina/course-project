@@ -20,7 +20,7 @@ public class InvalidTest {
         SelenideLogger.removeListener("allure");
     }
 
-    // Card Number Tests - ВАЛИДАЦИЯ (упрощенная)
+    // Card Number Tests
     @Test
     @DisplayName("Should show validation error for empty card number")
     void shouldShowErrorForEmptyCardNumber() {
@@ -30,7 +30,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCardNumber);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCardNumberFieldError();
     }
 
     @Test
@@ -42,7 +42,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(shortCardNumber);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCardNumberFieldError();
     }
 
     @Test
@@ -54,10 +54,10 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(cardWithLetters);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCardNumberFieldError();
     }
 
-    // Month Tests - ВАЛИДАЦИЯ (упрощенная)
+    // Month Tests
     @Test
     @DisplayName("Should show validation error for invalid month")
     void shouldShowErrorForInvalidMonth() {
@@ -67,7 +67,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(invalidCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyMonthFieldError();
     }
 
     @Test
@@ -79,7 +79,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(zeroMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyMonthFieldError();
     }
 
     @Test
@@ -91,7 +91,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyMonthFieldError();
     }
 
     @Test
@@ -103,10 +103,10 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyMonthFieldError();
     }
 
-    // Year Tests - ВАЛИДАЦИЯ (упрощенная)
+    // Year Tests
     @Test
     @DisplayName("Should show validation error for expired year")
     void shouldShowErrorForExpiredYear() {
@@ -116,7 +116,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(expiredCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyYearFieldError();
     }
 
     @Test
@@ -128,7 +128,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(futureYearCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyYearFieldError();
     }
 
     @Test
@@ -140,7 +140,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyYearCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyYearFieldError();
     }
 
     @Test
@@ -152,10 +152,10 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitYearCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyYearFieldError();
     }
 
-    // Holder Tests - ВАЛИДАЦИЯ (упрощенная)
+    // Holder Tests
     @Test
     @DisplayName("Should show validation error for empty holder")
     void shouldShowErrorForEmptyHolder() {
@@ -165,7 +165,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyHolderFieldError();
     }
 
     @Test
@@ -177,7 +177,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(specialCharsHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyHolderFieldError();
     }
 
     @Test
@@ -189,10 +189,10 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(longHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyHolderFieldError();
     }
 
-    // CVC Tests - ВАЛИДАЦИЯ (упрощенная)
+    // CVC Tests
     @Test
     @DisplayName("Should show validation error for short CVC")
     void shouldShowErrorForShortCvc() {
@@ -202,7 +202,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(shortCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCvcFieldError();
     }
 
     @Test
@@ -214,7 +214,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCvcFieldError();
     }
 
     @Test
@@ -226,7 +226,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCvcFieldError();
     }
 
     @Test
@@ -238,10 +238,10 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(cvcWithLettersCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCvcFieldError();
     }
 
-    // Form Tests - ВАЛИДАЦИЯ (упрощенная)
+    // Form Tests
     @Test
     @DisplayName("Should show validation errors for empty form")
     void shouldShowErrorForEmptyForm() {
@@ -251,7 +251,11 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCard);
         debitPage.submitPayment();
-        debitPage.verifyAnyValidationError(); // УПРОЩЕННАЯ ПРОВЕРКА
+        debitPage.verifyCardNumberFieldError();
+        debitPage.verifyMonthFieldError();
+        debitPage.verifyYearFieldError();
+        debitPage.verifyHolderFieldError();
+        debitPage.verifyCvcFieldError();
     }
 
     // БАНКОВСКИЕ ОШИБКИ - проверяем всплывающие уведомления

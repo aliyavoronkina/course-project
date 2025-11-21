@@ -15,13 +15,14 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
-    testImplementation 'com.codeborne:selenide:6.17.2'
+    testImplementation 'com.codeborne:selenide:6.19.1'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'org.projectlombok:lombok:1.18.28'
     testImplementation 'mysql:mysql-connector-java:8.0.33'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'io.qameta.allure:allure-selenide:2.13.8'
 
+    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
@@ -29,7 +30,10 @@ test {
     useJUnitPlatform()
     systemProperty 'file.encoding', 'UTF-8'
     systemProperty 'selenide.fileEncoding', 'UTF-8'
-    systemProperty 'selenide.headless', 'true' // для запуска без GUI
+    systemProperty 'selenide.headless', 'true'
+
+    systemProperty 'selenide.cdp', 'false'
+
     jvmArgs '-Dfile.encoding=UTF-8'
     testLogging {
         events "passed", "skipped", "failed"

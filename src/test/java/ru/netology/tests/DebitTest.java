@@ -38,7 +38,7 @@ public class DebitTest {
         debitPage.submitPayment();
         debitPage.verifySuccessNotification();
 
-        assertEquals("APPROVED", SQLHelper.getPaymentStatus());
+         assertEquals("APPROVED", SQLHelper.getPaymentStatus());
     }
 
     @Test

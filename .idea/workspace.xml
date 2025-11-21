@@ -6,30 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="47e3e725-d2fd-4480-b765-1161fc486891" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/allure-results/executor.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/CardInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DataHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/helpers/SQLHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/CreditPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/DebitPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/pages/PaymentPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/CreditTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/DebitTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/tests/InvalidTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.netology.tests.InvalidTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.netology.tests.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.netology.tests.InvalidTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Report.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/helpers/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/helpers/SQLHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/PaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/PaymentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/tests/DebitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/tests/DebitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/tests/InvalidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/tests/InvalidTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,13 +112,14 @@
       <command value="./gradlew clean test --info" />
       <command value="./gradlew test --info" />
       <command value="./gradlew clean test --no-configure-on-demand" />
-      <command value="./gradlew clean test " />
-      <command value="./gradlew clean build " />
       <command value="./gradlew test " />
       <command value="./gradlew build " />
+      <command value="./gradlew clean build " />
+      <command value="./gradlew clean build --info" />
+      <command value="./gradlew clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.course-project [build]">
+  <component name="RunManager" selected="Gradle.course-project [clean test]">
     <configuration name="course-project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

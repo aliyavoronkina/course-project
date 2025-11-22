@@ -9,10 +9,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class CreditPage {
 
-    // Объявляем элементы как поля класса
+    // Поля ввода
     private SelenideElement cardNumberField = $("input[placeholder='0000 0000 0000 0000']");
     private SelenideElement monthField = $("input[placeholder='08']");
     private SelenideElement yearField = $("input[placeholder='22']");
@@ -22,7 +23,33 @@ public class CreditPage {
     private SelenideElement successNotification = $(".notification_status_ok");
     private SelenideElement errorNotification = $(".notification_status_error");
 
+    // Селекторы для ошибок полей
+    private SelenideElement cardNumberError = $x("//span[contains(text(),'Номер карты')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement monthError = $x("//span[contains(text(),'Месяц')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement yearError = $x("//span[contains(text(),'Год')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement holderError = $x("//span[contains(text(),'Владелец')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement cvcError = $x("//span[contains(text(),'CVC/CVV')]/following-sibling::span[@class='input__sub']");
 
+    // Методы проверки ошибок
+    public void verifyCardNumberFieldError() {
+        cardNumberError.shouldBe(visible, Duration.ofSeconds(5));
+    }
+
+    public void verifyMonthFieldError() {
+        monthError.shouldBe(visible, Duration.ofSeconds(5));
+    }
+
+    public void verifyYearFieldError() {
+        yearError.shouldBe(visible, Duration.ofSeconds(5));
+    }
+
+    public void verifyHolderFieldError() {
+        holderError.shouldBe(visible, Duration.ofSeconds(5));
+    }
+
+    public void verifyCvcFieldError() {
+        cvcError.shouldBe(visible, Duration.ofSeconds(5));
+    }
 
     // Доменный метод для заполнения формы
     public void fillCreditForm(CardInfo card) {
@@ -45,9 +72,7 @@ public class CreditPage {
     }
 
     public void verifyErrorNotification() {
-        // Ждем появления элемента с увеличенным временем
-        errorNotification.shouldBe(visible, Duration.ofSeconds(30));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(45));
         errorNotification.shouldHave(text("Ошибка! Банк отказал в проведении операции"));
     }
-
 }

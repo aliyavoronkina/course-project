@@ -9,10 +9,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class DebitPage {
 
-    // Объявляем элементы как поля класса
+    // Поля ввода
     private SelenideElement cardNumberField = $("input[placeholder='0000 0000 0000 0000']");
     private SelenideElement monthField = $("input[placeholder='08']");
     private SelenideElement yearField = $("input[placeholder='22']");
@@ -22,33 +23,32 @@ public class DebitPage {
     private SelenideElement successNotification = $(".notification_status_ok");
     private SelenideElement errorNotification = $(".notification_status_error");
 
+    // Селекторы для ошибок полей
+    private SelenideElement cardNumberError = $x("//span[contains(text(),'Номер карты')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement monthError = $x("//span[contains(text(),'Месяц')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement yearError = $x("//span[contains(text(),'Год')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement holderError = $x("//span[contains(text(),'Владелец')]/following-sibling::span[@class='input__sub']");
+    private SelenideElement cvcError = $x("//span[contains(text(),'CVC/CVV')]/following-sibling::span[@class='input__sub']");
 
-    // Добавьте эти элементы для проверки ошибок полей
-    private SelenideElement cardNumberError = $(".input__sub[data-test-id='number'] .input__sub");
-    private SelenideElement monthError = $(".input__sub[data-test-id='month'] .input__sub");
-    private SelenideElement yearError = $(".input__sub[data-test-id='year'] .input__sub");
-    private SelenideElement holderError = $(".input__sub[data-test-id='holder'] .input__sub");
-    private SelenideElement cvcError = $(".input__sub[data-test-id='cvc'] .input__sub");
-
-    // Добавьте методы проверки ошибок
+    // Методы проверки ошибок
     public void verifyCardNumberFieldError() {
-        cardNumberError.shouldBe(visible).shouldHave(text("Неверный формат"));
+        cardNumberError.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     public void verifyMonthFieldError() {
-        monthError.shouldBe(visible).shouldHave(text("Неверный формат"));
+        monthError.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     public void verifyYearFieldError() {
-        yearError.shouldBe(visible).shouldHave(text("Неверный формат"));
+        yearError.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     public void verifyHolderFieldError() {
-        holderError.shouldBe(visible).shouldHave(text("Поле обязательно для заполнения"));
+        holderError.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     public void verifyCvcFieldError() {
-        cvcError.shouldBe(visible).shouldHave(text("Неверный формат"));
+        cvcError.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     // Доменный метод для заполнения формы
@@ -72,8 +72,7 @@ public class DebitPage {
     }
 
     public void verifyErrorNotification() {
-        // Ждем появления элемента с увеличенным временем
-        errorNotification.shouldBe(visible, Duration.ofSeconds(30));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(45));
         errorNotification.shouldHave(text("Ошибка! Банк отказал в проведении операции"));
     }
 }

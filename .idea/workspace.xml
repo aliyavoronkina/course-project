@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47e3e725-d2fd-4480-b765-1161fc486891" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Plan.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/Report.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Report.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/Summary.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Summary.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/CreditPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DebitPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

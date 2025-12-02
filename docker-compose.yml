@@ -14,14 +14,3 @@ services:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
       retries: 10
-
-  app:
-    image: eclipse-temurin:11-jre
-    command: java -jar /app/aqa-shop.jar
-    volumes:
-      - ./artifacts/aqa-shop.jar:/app/aqa-shop.jar
-      - ./application.properties:/app/application.properties
-    environment:
-      SPRING_CONFIG_LOCATION: /app/application.properties
-    ports:
-      - "8080:8080"

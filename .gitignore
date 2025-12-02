@@ -17,8 +17,6 @@ Thumbs.db
 build/
 out/
 bin/
-*.jar
-!aqa-shop.jar
 
 # Игнорируем отчеты тестов
 target/

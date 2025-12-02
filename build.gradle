@@ -22,7 +22,6 @@ dependencies {
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'io.qameta.allure:allure-selenide:2.13.8'
 
-    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
@@ -30,7 +29,7 @@ test {
     useJUnitPlatform()
     systemProperty 'file.encoding', 'UTF-8'
     systemProperty 'selenide.fileEncoding', 'UTF-8'
-    systemProperty 'selenide.headless', 'true'
+
 
     systemProperty 'selenide.cdp', 'false'
 

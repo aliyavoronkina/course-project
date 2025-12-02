@@ -72,7 +72,7 @@ public class DebitPage {
     }
 
     public void verifyErrorNotification() {
-        errorNotification.shouldBe(visible, Duration.ofSeconds(45));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(15));
         errorNotification.shouldHave(text("Ошибка! Банк отказал в проведении операции"));
     }
 }

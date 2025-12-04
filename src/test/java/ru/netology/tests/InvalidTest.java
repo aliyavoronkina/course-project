@@ -30,7 +30,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCardNumber);
         debitPage.submitPayment();
-        debitPage.verifyCardNumberFieldError();
+        debitPage.verifyCardNumberFieldError("Неверный формат");
     }
 
     @Test
@@ -42,7 +42,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(shortCardNumber);
         debitPage.submitPayment();
-        debitPage.verifyCardNumberFieldError();
+        debitPage.verifyCardNumberFieldError("Неверный формат");
     }
 
     @Test
@@ -54,7 +54,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(cardWithLetters);
         debitPage.submitPayment();
-        debitPage.verifyCardNumberFieldError();
+        debitPage.verifyCardNumberFieldError("Неверный формат");
     }
 
     // Month Tests
@@ -67,7 +67,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(invalidCard);
         debitPage.submitPayment();
-        debitPage.verifyMonthFieldError();
+        debitPage.verifyMonthFieldError("Неверный формат");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(zeroMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyMonthFieldError();
+        debitPage.verifyMonthFieldError("Неверный формат");
     }
 
     @Test
@@ -91,7 +91,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyMonthFieldError();
+        debitPage.verifyMonthFieldError("Неверный формат");
     }
 
     @Test
@@ -103,7 +103,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitMonthCard);
         debitPage.submitPayment();
-        debitPage.verifyMonthFieldError();
+        debitPage.verifyMonthFieldError("Неверный формат");
     }
 
     // Year Tests
@@ -116,7 +116,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(expiredCard);
         debitPage.submitPayment();
-        debitPage.verifyYearFieldError();
+        debitPage.verifyYearFieldError("Неверный формат");
     }
 
     @Test
@@ -128,7 +128,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(futureYearCard);
         debitPage.submitPayment();
-        debitPage.verifyYearFieldError();
+        debitPage.verifyYearFieldError("Неверный формат");
     }
 
     @Test
@@ -140,7 +140,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyYearCard);
         debitPage.submitPayment();
-        debitPage.verifyYearFieldError();
+        debitPage.verifyYearFieldError("Неверный формат");
     }
 
     @Test
@@ -152,7 +152,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitYearCard);
         debitPage.submitPayment();
-        debitPage.verifyYearFieldError();
+        debitPage.verifyYearFieldError("Неверный формат");
     }
 
     // Holder Tests
@@ -165,7 +165,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyHolderFieldError();
+        debitPage.verifyHolderFieldError("Поле обязательно для заполнения");
     }
 
     @Test
@@ -177,7 +177,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(specialCharsHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyHolderFieldError();
+        debitPage.verifyHolderFieldError("Неверный формат");
     }
 
     @Test
@@ -189,7 +189,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(longHolderCard);
         debitPage.submitPayment();
-        debitPage.verifyHolderFieldError();
+        debitPage.verifyHolderFieldError("Неверный формат");
     }
 
     // CVC Tests
@@ -202,7 +202,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(shortCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyCvcFieldError();
+        debitPage.verifyCvcFieldError("Неверный формат");
     }
 
     @Test
@@ -214,7 +214,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyCvcFieldError();
+        debitPage.verifyCvcFieldError("Неверный формат");
     }
 
     @Test
@@ -226,7 +226,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(singleDigitCvcCard);
         debitPage.submitPayment();
-        debitPage.verifyCvcFieldError();
+        debitPage.verifyCvcFieldError("Неверный формат");
     }
 
     @Test
@@ -238,7 +238,7 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(cvcWithLettersCard);
         debitPage.submitPayment();
-        debitPage.verifyCvcFieldError();
+        debitPage.verifyCvcFieldError("Неверный формат");
     }
 
     // Form Tests
@@ -251,11 +251,11 @@ public class InvalidTest {
 
         debitPage.fillPaymentForm(emptyCard);
         debitPage.submitPayment();
-        debitPage.verifyCardNumberFieldError();
-        debitPage.verifyMonthFieldError();
-        debitPage.verifyYearFieldError();
-        debitPage.verifyHolderFieldError();
-        debitPage.verifyCvcFieldError();
+        debitPage.verifyCardNumberFieldError("Неверный формат");
+        debitPage.verifyMonthFieldError("Неверный формат");
+        debitPage.verifyYearFieldError("Неверный формат");
+        debitPage.verifyHolderFieldError("Поле обязательно для заполнения");
+        debitPage.verifyCvcFieldError("Неверный формат");
     }
 
     // БАНКОВСКИЕ ОШИБКИ

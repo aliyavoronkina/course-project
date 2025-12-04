@@ -30,25 +30,30 @@ public class CreditPage {
     private SelenideElement holderError = $x("//span[contains(text(),'Владелец')]/following-sibling::span[@class='input__sub']");
     private SelenideElement cvcError = $x("//span[contains(text(),'CVC/CVV')]/following-sibling::span[@class='input__sub']");
 
-    // Методы проверки ошибок
-    public void verifyCardNumberFieldError() {
-        cardNumberError.shouldBe(visible, Duration.ofSeconds(5));
+    // Методы проверки ошибок с текстом
+    public void verifyCardNumberFieldError(String expectedErrorText) {
+        cardNumberError.shouldBe(visible);
+        cardNumberError.shouldHave(text(expectedErrorText));
     }
 
-    public void verifyMonthFieldError() {
-        monthError.shouldBe(visible, Duration.ofSeconds(5));
+    public void verifyMonthFieldError(String expectedErrorText) {
+        monthError.shouldBe(visible);
+        monthError.shouldHave(text(expectedErrorText));
     }
 
-    public void verifyYearFieldError() {
-        yearError.shouldBe(visible, Duration.ofSeconds(5));
+    public void verifyYearFieldError(String expectedErrorText) {
+        yearError.shouldBe(visible);
+        yearError.shouldHave(text(expectedErrorText));
     }
 
-    public void verifyHolderFieldError() {
-        holderError.shouldBe(visible, Duration.ofSeconds(5));
+    public void verifyHolderFieldError(String expectedErrorText) {
+        holderError.shouldBe(visible);
+        holderError.shouldHave(text(expectedErrorText));
     }
 
-    public void verifyCvcFieldError() {
-        cvcError.shouldBe(visible, Duration.ofSeconds(5));
+    public void verifyCvcFieldError(String expectedErrorText) {
+        cvcError.shouldBe(visible);
+        cvcError.shouldHave(text(expectedErrorText));
     }
 
     // Доменный метод для заполнения формы
